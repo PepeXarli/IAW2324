@@ -12,4 +12,6 @@ ___
 
 Para realizar este README me estoy ayudando gracias a este [enlace](https://markdown.es/sintaxis-markdown/#reglas)
 
+`Uso esta línea de código para que puedas copiar este texto`
+
 ![Mira una imagen =D](https://images.emojiterra.com/google/android-pie/512px/1f44d-1f3fe.png)
