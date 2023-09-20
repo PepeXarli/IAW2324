@@ -12,6 +12,10 @@ ___
 
 Para realizar este README me estoy ayudando gracias a este [enlace](https://markdown.es/sintaxis-markdown/#reglas)
 
-`Uso esta línea de código para que puedas copiar este texto`
+`Esto es una línea de codigo`
+
+~~~
+Esta es otra linea de código pero que se puede copiar
+~~~
 
 ![Mira una imagen =D](https://images.emojiterra.com/google/android-pie/512px/1f44d-1f3fe.png)
