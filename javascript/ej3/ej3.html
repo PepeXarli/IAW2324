@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dni</title>
+</head>
+<body>
+    <h1>ADIVINA LA LETRA DEL DNI</h1>
+
+    <input type="textbox" id="entrada">
+    <button onclick="calcular()">Calcula!</button>
+    <p id="resultado"></p>
+
+    <script>
+
+function calcular(){
+
+        if (document.getElementById('entrada').length=8){
+         letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+        var entrada = document.getElementById('entrada').value;
+        var resto = entrada%23;
+        var resultado = letras[resto]
+      
+            document.getElementById('resultado').innerHTML = 'Tu letra es ' + resultado;
+            
+        }
+
+   else{
+    document.getElementById('resultado').innerHTML='El dni debe constar de 8 cifras'
+   } 
+
+}
+  </script>
+</body>
+</html>
