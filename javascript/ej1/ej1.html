@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ej1.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <div id="circulos">
+     <div id="rojo"></div> 
+      <div id="verde"></div> 
+       <div id="azul"></div> 
+    </div>
+    <div id="botones">
+        <button onclick="ocrojo()">Ocultar/Mostrar</button>
+        <button onclick="ocverde()">Ocultar/Mostrar</button>
+        <button onclick="ocazul()">Ocultar/Mostrar</button>
+    </div>
+
+
+    <script>
+        function ocrojo(){
+            if(document.getElementById("rojo").style.visibility == "hidden"){
+                document.getElementById("rojo").style.visibility = "visible";
+            }
+            else{
+                document.getElementById("rojo").style.visibility = "hidden";
+            }
+        }
+        function ocverde(){
+            if(document.getElementById("verde").style.visibility == "hidden"){
+                document.getElementById("verde").style.visibility = "visible";
+            }
+            else{
+                document.getElementById("verde").style.visibility = "hidden";
+            }
+        }
+        function ocazul(){
+            if(document.getElementById("azul").style.visibility == "hidden"){
+                document.getElementById("azul").style.visibility = "visible";
+            }
+            else{
+                document.getElementById("azul").style.visibility = "hidden";
+            }        }
+    </script>
+    
+</body>
+</html>
