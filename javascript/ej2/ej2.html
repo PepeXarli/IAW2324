@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>CONVERSOR</h1>
+    <h2>De euro a dolar</h2>
+    <input type="text" id="euros"><button onclick="convADolar()">Convertir</button> 
+    <p id="resultdolars"></p>
+    <h2>De dolar a euro</h2>
+    <input type="text" id="dolars"><button onclick="convAEuro()">Convertir</button>
+    <p id="resulteuros"></p>
+
+    <script>
+        function convADolar(){
+            let euros = parseFloat(document.getElementById("euros").value);
+            let dolars="";
+
+            if(euros<0){
+                alert('No se permiten valores negativos');
+            }
+            else{
+                dolars = euros * 1.07; 
+            }
+            document.getElementById("resultdolars").innerHTML = "Dólares: "+dolars+" $";
+
+        }
+
+        function convAEuro(){
+            let dolars = parseFloat(document.getElementById("dolars").value);
+            let euros="";
+
+            if(euros<0){
+                alert('No se permiten valores negativos');
+            }
+            else{
+                euros = dolars * 0.94; 
+            }
+            document.getElementById("resulteuros").innerHTML = "Euros: "+euros+" €";
+
+        }
+    </script>
+</body>
+</html>
