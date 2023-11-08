@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>RED SOCIAL</h1>
+
+    <h3>Escribe tu mensaje</h3>
+    <input type="text" id="mensaje"> <button onclick="enviar()">Enviar</button>
+
+    <p id="parrafo"></p>
+
+    <script>
+        var msg =[]
+        function enviar() {
+            let mensaje = document.getElementById("mensaje").value;
+            msg.push(mensaje);
+            msg.sort(); //Ordenar array
+            document.getElementById("parrafo").innerHTML="";
+            for(var i=0; i<msg.length; i++) {
+                document.getElementById("parrafo").innerHTML+='<p>'+msg[i]+'</p> ' 
+            }         
+        }
+    </script>
+</body>
+</html>

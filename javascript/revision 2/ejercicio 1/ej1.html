@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>CALCULADORA IMC</h1>
+
+    <h2>Introduzca su peso en kg</h2>
+    <input type="text" placeholder="Ej: 50" id="peso">
+
+    <h2>Introduzca su altura en cm</h2>
+    <input type="text" placeholder="Ej: 160" id="altura">
+
+    <button onclick="calcular()">Calcula</button>
+
+    <p id="resultado"></p>
+    <p id="composición"></p>
+
+    <script>
+        function calcular(){
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value)/100;
+
+            if(isNaN(peso) || isNaN(altura)){
+                document.getElementById('resultado').innerHTML='Alguno de los dos valores no es númerico';
+            }
+            else if(peso<=0 || altura <=0){
+                document.getElementById('resultado').innerHTML='Peso o Altura incorrectos';
+            }
+            else{
+                let imc=peso/Math.pow(altura, 2)
+                document.getElementById('resultado').innerHTML='Su imc es de '+imc;
+
+                if(imc<18.5){
+                document.getElementById('composición').innerHTML='Peso inferior al normal';
+                }
+                else if(imc>=18.5 || imc<=24.9){
+                document.getElementById('composición').innerHTML='Peso normal';
+                }
+                else if(imc>=25 || imc<=29.9){
+                document.getElementById('composición').innerHTML='Peso superior al normal';
+                }
+                else if(imc>=30){
+                document.getElementById('composición').innerHTML='Obesidad';
+                }
+            }
+
+
+        }
+    </script>
+</body>
+</html>
