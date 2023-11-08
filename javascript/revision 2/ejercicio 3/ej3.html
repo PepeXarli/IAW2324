@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        .error{
+            color: red;
+        }
+        p{
+            color: green
+        }
+    </style>
+
+</head>
+<body>
+    <h1>FORMULARIO</h1>
+
+    <label for="">Nombre: </label><input type="text" id="nombre"><label for="" id="errornombre" class="error"></label><br><br>
+    <label for="">Apellido: </label><input type="text" id="apellido"><label for="" id="errorapellido" class="error"></label><br><br>
+    <label for="">Email: </label><input type="text" id="email"><label for="" id="erroremail" class="error"></label><br><br>
+    <label for="">Dirección: </label><input type="text" id="direccion"><label for="" id="errordirecc" class="error"></label><br><br>
+    <label for="">Ciudad: </label><input type="text" id="ciudad"><label for="" id="errorciudad" class="error"></label><br><br>
+    <label for="">Teléfono: </label> <input type="text" id="tel"><label for="" id="errortel" class="error"></label><br><br>
+    <label for="">DNI: </label> <input type="text" id="dni"><label for="" id="errordni" class="error"></label><br><br>
+    <label for="">PIN: </label><input type="text" id="pin" pattern="/^[0-9]+$/"><label for="" id="errorpin" class="error"></label><br><br>
+    <label for="">Repita el PIN: </label> <input type="text" id="pin2" pattern="[0-9]+"><label for="" id="errorpin2" class="error"></label><br><br>
+
+    <button onclick="validar()">ENVIAR</button>
+
+    <p id="exito"></p>
+
+    <script>
+        function validar() {
+            let nombre = document.getElementById('nombre').value;
+            let apellido = document.getElementById('apellido').value;
+            let email = document.getElementById('email').value;
+            let direccion = document.getElementById('direccion').value;
+            let ciudad = document.getElementById('ciudad').value;
+            let tel = document.getElementById('tel').value;
+            let dni = document.getElementById('dni').value;
+            let pin = document.getElementById('pin').value;
+            let pin2 = document.getElementById('pin2').value;
+            let errores=0;
+
+            document.getElementById('errornombre').innerHTML='';
+            document.getElementById('errorapellido').innerHTML='';
+            document.getElementById('erroremail').innerHTML='';
+            document.getElementById('errordirecc').innerHTML='';
+            document.getElementById('errorciudad').innerHTML='';
+            document.getElementById('errortel').innerHTML='';
+            document.getElementById('errordni').innerHTML='';
+            document.getElementById('errorpin').innerHTML='';
+            document.getElementById('exito').innerHTML='';
+
+
+            if(nombre==""){
+                document.getElementById('errornombre').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(apellido==''){
+                document.getElementById('errorapellido').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(email==''){
+                document.getElementById('erroremail').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            else if(validateEmail()==false){
+                document.getElementById('erroremail').innerHTML=' El correo no es valido';
+                errores++
+            }
+            if(dni==''){
+                document.getElementById('errordni').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            else if(nif(dni)==false){
+                document.getElementById('errordni').innerHTML=' DNI no válido. Revise si lo ha escrito bien';
+                errores++;
+            }
+            if(pin==''){
+                document.getElementById('errorpin').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(pin2==''){
+                document.getElementById('errorpin2').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(pin2!=pin){
+                document.getElementById('errorpin').innerHTML=' Los pines deben coincidir';
+                document.getElementById('errorpin2').innerHTML=' Los pines deben coincidir';
+                errores++;
+            }
+            else if(validarPinNumerico(pin)==false){
+                document.getElementById('errorpin').innerHTML=' El pin debe ser númerico';
+            }
+            else if(validarPinNumerico(pin2)==false){
+                document.getElementById('errorpin2').innerHTML=' El pin debe ser númerico';
+            }
+            else if(pin.length<8){
+                document.getElementById('errorpin').innerHTML=' Los pines deben tener longitud mínima 8';
+                document.getElementById('errorpin2').innerHTML=' Los pines deben tener longitud mínima 8';
+            }
+            if(errores==0){
+                document.getElementById('exito').innerHTML='Completado con éxito'
+            }
+
+        }
+
+        function nif(dni) {
+            var numero
+            var letr
+            var letra
+            var expresion_regular_dni
+            var valido
+ 
+            expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+ 
+            if(expresion_regular_dni.test (dni) == true){
+            numero = dni.substr(0,dni.length-1);
+            letr = dni.substr(dni.length-1,1);
+            numero = numero % 23;
+            letra='TRWAGMYFPDXBNJZSQVHLCKET';
+            letra=letra.substring(numero,numero+1);
+            if (letra!=letr.toUpperCase()) {
+            valido=false;
+            }else{
+            valido=true;
+            }
+            }else{
+            valido=false;
+            }
+            return valido
+        }
+
+        function validarPinNumerico(id){
+            var dato_a_comprobar = id;
+            var valoresAceptados = /^[0-9]+$/;
+            var valido
+            if (dato_a_comprobar.match(valoresAceptados)){
+             valido= true;
+            } else {
+             valido=false;
+            }
+            return valido
+        }
+
+        function validateEmail(){
+                
+                // Get our input reference.
+                var emailField = document.getElementById('email');
+                
+                // Define our regular expression.
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+                var valido
+            
+                // Using test we can check if the text match the pattern
+                if( validEmail.test(emailField.value) ){
+                    valido=true;
+                }else{
+                    valido=false;
+                }
+                return valido
+        }
+        
+    </script>
+
+</body>
+</html>
