@@ -53,6 +53,7 @@
             document.getElementById('errortel').innerHTML='';
             document.getElementById('errordni').innerHTML='';
             document.getElementById('errorpin').innerHTML='';
+            document.getElementById('errorpin2').innerHTML='';
             document.getElementById('exito').innerHTML='';
 
 
@@ -95,13 +96,16 @@
             }
             else if(validarPinNumerico(pin)==false){
                 document.getElementById('errorpin').innerHTML=' El pin debe ser númerico';
+                errores++;
             }
             else if(validarPinNumerico(pin2)==false){
                 document.getElementById('errorpin2').innerHTML=' El pin debe ser númerico';
+                errores++;
             }
             else if(pin.length<8){
                 document.getElementById('errorpin').innerHTML=' Los pines deben tener longitud mínima 8';
                 document.getElementById('errorpin2').innerHTML=' Los pines deben tener longitud mínima 8';
+                errores++;
             }
             if(errores==0){
                 document.getElementById('exito').innerHTML='Completado con éxito'
