@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>ADIVINE EL NUMERO ENTRE 0 Y 5</h1>
+
+    <input type="text" id="numero"> <button onclick="adivinar()">Adivina!</button>
+    <p id="correcto"></p>
+
+    <script>
+        function adivinar(){
+            let correcto = Math.floor(Math.random() * (5 - 0 +1) + 0); 
+            let num = document.getElementById('numero').value;
+
+            if(num==correcto){
+                document.getElementById("correcto").innerHTML = "¡Correcto! El número es "+correcto+".";
+            }
+            else{
+                document.getElementById("correcto").innerHTML = "Incorrecto. El número era "+correcto;
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
