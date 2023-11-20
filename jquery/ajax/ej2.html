@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>FOTOS ALEATORIAS</h1>
+
+    <button>Generar</button> <br>
+    <img src="" alt="">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function () { 
+                let api = 'ImLTRu4TC2KSc9RmEM44tgkk4NyaInoyIU_ZuOGt56w'
+
+                $.ajax({
+                    type: "get",
+                    url: `https://api.unsplash.com/photos/random?client_id=${api}`,
+                    success: function (r) {
+                        console.log(r);
+                        $("img").attr("src", r.urls.small);
+                        
+                    }
+                    
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>

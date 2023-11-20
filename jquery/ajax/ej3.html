@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>PELICULAS</h1>
+
+    <input type="text" id="pelicula"><button>BUSCAR</button> <br>
+    <div></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function () { 
+                let api = 'eaf53ea0';
+                let titulo=$('#pelicula').val();
+
+                $.ajax({
+                    type: "get",
+                    url: `http://www.omdbapi.com/?apikey=${api}&t=${titulo}`,
+                    success: function (r) {
+                        console.log(r);
+                        $('div').html(
+                            `<p><strong>Titulo: </strong>${r.Title}</p>`+
+                            `<p><strong>Año: </strong>${r.Year}</p>`+
+                            `<p><strong>Director: </strong>${r.Director}</p>`+
+                            `<img src=${r.Poster}>`
+                            
+                        );
+                    },
+                    error: function(){
+                        alert('No se ha podido obtener la información');
+                    }
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>
