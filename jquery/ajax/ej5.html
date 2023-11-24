@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>LIBROS</h1>
+    <input type="text" id="libro"><button>BUSCAR</button> <br><br>
+    <div></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function () { 
+                let api = 'AIzaSyBGlkTnKgidU1WvpuCHtAZd6U58TCnnT0E';
+                let libro=$('#libro').val();
+
+                $.ajax({
+                    type: "get",
+                    url: `https://www.googleapis.com/books/v1/volumes?q=intitle:${libro}&key=${api}`,
+                    success: function (r) {
+                        console.log(r);
+                        $('div').html(
+                            `<img src="${r.items[0].volumeInfo.imageLinks.smallThumbnail}" alt="Portada">`+
+                            `<p><b>Título</b>: ${r.items[0].volumeInfo.title}</p>`+
+                            `<p><b>Autor</b>: ${r.items[0].volumeInfo.authors}</p>`+
+                            `<p><b>Editorial</b>: ${r.items[0].publisher}</p>`+
+                            `<p><b>Link de compra</b>: <a href="${r.items[0].saleInfo.buyLink}">Pulsa aquí</a>`+
+                            `<p><b>Precio</b>: ${r.items[0].saleInfo.listPrice.amount}${r.items[0].saleInfo.listPrice.currencyCode}`
+                        );
+                    },
+                    error: function(){
+                        alert('No se ha podido obtener la información');
+                    }
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>
+

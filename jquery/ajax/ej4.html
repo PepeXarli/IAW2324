@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        img{
+            width: 10vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>GITHUB USER</h1>
+
+    <input type="text" id="usuario"> <button>BUSCAR</button> <br><br>
+    <div></div>
+<a href=""></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function () { 
+                let usuario=$('#usuario').val();
+
+                $.ajax({
+                    type: "get",
+                    url: `https://api.github.com/users/${usuario}`,
+                    success: function (r) {
+                        console.log(r);
+                        $('div').html(
+                            `<img src="${r.avatar_url}" alt="Foto de perfil">`+
+                            `<p>Usuario: ${r.login}</p>`+
+                            `<a href="${r.url}"></a>`+
+                            `<p> Seguidores: ${r.followers}`
+                            
+                        );
+                    },
+                    error: function(){
+                        alert('No se ha podido obtener la información');
+                    }
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>
