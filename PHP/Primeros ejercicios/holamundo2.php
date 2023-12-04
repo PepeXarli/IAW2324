@@ -9,7 +9,7 @@
     
 <?php 
     $cadena='PHP con echo</p>';
-    echo '<p>Hola mundo desde '.$cadena;
+    echo "<p>Hola mundo desde $cadena </p>";
 ?>
 </body>
 </html>
