@@ -9,10 +9,10 @@
 <h1>Tu foto</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
         <label for="name">Nombre: </label>
-        <input type="text" id="nombre" name="nombre"/>
+        <input type="text"  name="nombre"/>
 
         <label for="foto">Foto: </label>
-        <input type="file" id="foto" name="foto"/>
+        <input type="file" name="foto"/>
         
         <button type="submit">Enviar</button>
     </form>
