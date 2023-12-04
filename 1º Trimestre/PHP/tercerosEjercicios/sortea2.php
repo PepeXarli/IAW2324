@@ -27,13 +27,12 @@
             if($numpremios < count($separado_por_salto)){
                 for ($i=0;$i<=$numpremios;$i++)
                 {
-                    echo $separado_por_salto[$i];
+                    echo $separado_por_salto[rand(0,$numpremios)];
     
                     
                 }
-            }
-            else{
-                echo "El número de premios debe ser menor que el número de participantes"
+            } else{
+                echo "El número de premios debe ser menor al número de participantes";
             }
         }
     ?>
