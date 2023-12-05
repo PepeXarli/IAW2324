@@ -22,12 +22,12 @@
 
             $separado_por_salto = explode("\n", $participantes);
 
-            $numpremios=int(htmlspecialchars($_POST['numpremios']));
+            $numpremios=htmlspecialchars($_POST['numpremios']);
 
             if($numpremios < count($separado_por_salto)){
                 for ($i=0;$i<=$numpremios;$i++)
                 {
-                    echo $separado_por_salto[rand(0,$numpremios)];
+                    echo $separado_por_salto[rand(0,count($separado_por_salto))];
     
                     
                 }
