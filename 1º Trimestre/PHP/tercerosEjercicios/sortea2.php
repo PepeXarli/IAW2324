@@ -25,9 +25,11 @@
             $numpremios=htmlspecialchars($_POST['numpremios']);
 
             if($numpremios < count($separado_por_salto)){
-                for ($i=0;$i<=$numpremios;$i++)
+
+                $random=array_rand($separado_por_salto);
+                for ($i=0;$i<$numpremios;$i++)
                 {
-                    echo $separado_por_salto[rand(0,count($separado_por_salto))];
+                    echo $separado_por_salto[$i]."<br>";
     
                     
                 }
