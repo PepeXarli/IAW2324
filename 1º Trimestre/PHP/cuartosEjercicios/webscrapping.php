@@ -7,23 +7,31 @@
 </head>
 <body>
 
-    <form action="" method="post">
-    <LABEL>Introduce un link para escanear</LABEL>
-    <input type="text" name='web'> <button type="submit">ESCANEAR</button>
-    </form>
-    
-    <?php
+    <h2>Extractor de Correos</h2>
 
-    if(isset($_POST["submit"])) {
-        $web=$_POST['web'];
-
-        $html=file_get_contents($web);
-
-        echo $html;
-    }
-
-    ?>
+        <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+            <label for="url">Ingresa la URL:</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Buscar Correos</button>
+        </form>
 
 
+        <?php
+  
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $url=$_POST['url'];
+            if(!filter_var($url, FILTER_VALIDATE_URL)){
+                echo "Ingrese una URL válida";
+            } else{
+                $html=file_get_contents($url);
+                $patron='/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/';
+                preg_match_all($patron,$html,$encontrados);
+                foreach ($encontrados[0] as $email) {
+                    echo $email. '<br>';
+                }
+            }
+        }
+        ?>
 </body>
 </html>
