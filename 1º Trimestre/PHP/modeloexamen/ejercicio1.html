@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        .error{
+            color: red;
+        }
+        p{
+            color: green
+        }
+
+        #caja{
+            display: flex;
+            flex-direction: row;
+        }
+        #inputs{
+          display: flex;
+          flex-direction: column;
+          align-content: space-between;
+          gap: 1.5vh;
+          margin-left: 2vw;
+        }
+        #titulos{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+        }
+        #errores{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            margin-left: 2vw;
+
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Formulario de contacto</h2>
+
+    <div id="caja">
+        <div id="titulos">
+            <label for="">Asunto*: </label> 
+            <label for="">DNI*: </label>  
+            <label for="">Nombre*: </label>
+            <label for="">Primer Apellido*: </label>
+            <label for="">Segundo Apellido: </label>
+            <label for="">Fecha de nacimiento*: </label>
+            <label for="">Teléfono de contacto*: </label>
+            <label for="">Correo electrónico(para contacto): </label>
+            <label for="">Domicilio*: </label>
+            <label for="">Código Postal*: </label>
+            <label for="">Municipio*: </label>
+            <label for="">Oficina*: </label>
+            <label for="">Información requerida*: </label> <br><br><br><br><br><br>
+            <label for="">Fichero anexo I (máximo 2Mb): </label> 
+            <label for="">Fichero anexo II (máximo 2Mb): </label>
+        </div>
+    
+        <div id="inputs">
+            <input type="text" id="asunto"> 
+            <input type="text" id="dni">
+            <input type="text" id="nombre"> 
+            <input type="text" id="primero">
+            <input type="text" id="segundo">
+            <input type="date" id="fecha">
+            <input type="text" id="tel">
+            <input type="text" id="email">
+            <input type="text" id="domicilio">  
+            <input type="text" id="cp"> 
+            <select name="" id="municipio">
+                <option value='41001'
+                >Aguadulce</option>
+                <option value='41002'
+                >Alanís</option>
+                <option value='41003'
+                >Albaida del Aljarafe</option>
+                <option value='41004'
+                >Alcalá de Guadaíra</option>
+                <option value='41005'
+                >Alcalá del Río</option>
+                <option value='41006'
+                >Alcolea del Río</option>
+                <option value='41008'
+                >Algámitas</option>
+                <option value='41009'
+                >Almadén de la Plata</option>
+                <option value='41010'
+                >Almensilla</option>
+                <option value='41011'
+                >Arahal</option>
+                <option value='41012'
+                >Aznalcázar</option>
+                <option value='41013'
+                >Aznalcóllar</option>
+                <option value='41014'
+                >Badolatosa</option>
+                <option value='41015'
+                >Benacazón</option>
+                <option value='41016'
+                >Bollullos de la Mitación</option>
+                <option value='41017'
+                >Bormujos</option>
+                <option value='41018'
+                >Brenes</option>
+                <option value='41019'
+                >Burguillos</option>
+                <option value='41021'
+                >Camas</option>
+                <option value='41023'
+                >Cantillana</option>
+                <option value='41901'
+                >Cañada Rosal</option>
+                <option value='41024'
+                >Carmona</option>
+                <option value='41025'
+                >Carrión de los Céspedes</option>
+                <option value='41026'
+                >Casariche</option>
+                <option value='41027'
+                >Castilblanco de los Arroyos</option>
+                <option value='41028'
+                >Castilleja de Guzmán</option>
+                <option value='41029'
+                >Castilleja de la Cuesta</option>
+                <option value='41030'
+                >Castilleja del Campo</option>
+                <option value='41032'
+                >Cazalla de la Sierra</option>
+                <option value='41033'
+                >Constantina</option>
+                <option value='41034'
+                >Coria del Río</option>
+                <option value='41035'
+                >Coripe</option>
+                <option value='41038'
+                >Dos Hermanas</option>
+                <option value='41039'
+                >Écija</option>
+                <option value='41031'
+                >El Castillo de las Guardas</option>
+                <option value='41036'
+                >El Coronil</option>
+                <option value='41903'
+                >El Cuervo</option>
+                <option value='41043'
+                >El Garrobo</option>
+                <option value='41057'
+                >El Madroño</option>
+                <option value='41904'
+                >El Palmar de Troya</option>
+                <option value='41073'
+                >El Pedroso</option>
+                <option value='41080'
+                >El Real de la Jara</option>
+                <option value='41083'
+                >El Ronquillo</option>
+                <option value='41084'
+                >El Rubio</option>
+                <option value='41090'
+                >El Saucejo</option>
+                <option value='41102'
+                >El Viso del Alcor</option>
+                <option value='41040'
+                >Espartinas</option>
+                <option value='41041'
+                >Estepa</option>
+                <option value='41042'
+                >Fuentes de Andalucía</option>
+                <option value='41044'
+                >Gelves</option>
+                <option value='41045'
+                >Gerena</option>
+                <option value='41046'
+                >Gilena</option>
+                <option value='41047'
+                >Gines</option>
+                <option value='41048'
+                >Guadalcanal</option>
+                <option value='41049'
+                >Guillena</option>
+                <option value='41050'
+                >Herrera</option>
+                <option value='41051'
+                >Huévar del Aljarafe</option>
+                <option value='41902'
+                >Isla Mayor</option>
+                <option value='41007'
+                >La Algaba</option>
+                <option value='41022'
+                >La Campana</option>
+                <option value='41056'
+                >La Luisiana</option>
+                <option value='41077'
+                >La Puebla de Cazalla</option>
+                <option value='41078'
+                >La Puebla de los Infantes</option>
+                <option value='41079'
+                >La Puebla del Río</option>
+                <option value='41081'
+                >La Rinconada</option>
+                <option value='41082'
+                >La Roda de Andalucía</option>
+                <option value='41052'
+                >Lantejuela</option>
+                <option value='41020'
+                >Las Cabezas de San Juan</option>
+                <option value='41066'
+                >Las Navas de la Concepción</option>
+                <option value='41053'
+                >Lebrija</option>
+                <option value='41054'
+                >Lora de Estepa</option>
+                <option value='41055'
+                >Lora del Río</option>
+                <option value='41037'
+                >Los Corrales</option>
+                <option value='41063'
+                >Los Molares</option>
+                <option value='41069'
+                >Los Palacios y Villafranca</option>
+                <option value='41058'
+                >Mairena del Alcor</option>
+                <option value='41059'
+                >Mairena del Aljarafe</option>
+                <option value='41060'
+                >Marchena</option>
+                <option value='41061'
+                >Marinaleda</option>
+                <option value='41062'
+                >Martín de la Jara</option>
+                <option value='41064'
+                >Montellano</option>
+                <option value='41065'
+                >Morón de la Frontera</option>
+                <option value='41067'
+                >Olivares</option>
+                <option value='41068'
+                >Osuna</option>
+                <option value='41070'
+                >Palomares del Río</option>
+                <option value='41071'
+                >Paradas</option>
+                <option value='41072'
+                >Pedrera</option>
+                <option value='41074'
+                >Peñaflor</option>
+                <option value='41075'
+                >Pilas</option>
+                <option value='41076'
+                >Pruna</option>
+                <option value='41085'
+                >Salteras</option>
+                <option value='41086'
+                >San Juan de Aznalfarache</option>
+                <option value='41088'
+                >San Nicolás del Puerto</option>
+                <option value='41087'
+                >Sanlúcar la Mayor</option>
+                <option value='41089'
+                >Santiponce</option>
+                <option value='41091'
+                >Sevilla</option>
+                <option value='41092'
+                >Tocina-los Rosales</option>
+                <option value='41093'
+                >Tomares</option>
+                <option value='41094'
+                >Umbrete</option>
+                <option value='41095'
+                >Utrera</option>
+                <option value='41096'
+                >Valencina de la Concepción</option>
+                <option value='41097'
+                >Villamanrique de la Condesa</option>
+                <option value='41100'
+                >Villanueva de San Juan</option>
+                <option value='41098'
+                >Villanueva del Ariscal</option>
+                <option value='41099'
+                >Villanueva del Río y Minas</option>
+                <option value='41101'
+                >Villaverde del Río</option>
+            </select> 
+            <select name="oficina" id="oficina">
+                <option value=""></option>
+                <option value="1">Oficina 1</option>
+                <option value="2">Oficina 2</option>
+                <option value="3">Oficina 3</option>
+                <option value="4">Oficina 4</option>
+            </select> 
+            <textarea name="" id="info" cols="30" rows="10"></textarea>
+            <input type="file" name="anexo1" id="anexo1"> 
+            <input type="file" name="anexo2" id="anexo2">
+    
+        </div>
+
+        <div id="errores">
+            <label for="" id="errorasunto" class="error"></label>
+            <label for="" id="errordni" class="error"></label>
+            <label for="" id="errornombre" class="error"></label> 
+            <label for="" id="errorprimero" class="error"></label>  <br>
+            <label for="" id="errorfecha" class="error"></label>
+            <label for="" id="errortel" class="error"></label>
+            <label for="" id="erroremail" class="error"></label>
+            <label for="" id="errordomicilio" class="error"></label>
+            <label for="" id="errorcp" class="error"></label>     
+            <label for="" id="errormunicipio" class="error"></label>
+            <label for="" id="erroroficina" class="error"></label>
+            <label for="" id="errorinfo" class="error"></label> <br><br><br><br><br><br> <br>
+            <label for="" id="erroranexo1" class="error"></label>
+            <label for="" id="erroranexo2" class="error"></label>
+        </div>
+    </div>
+    <br>
+    <input type="checkbox" name="" id="terminos"><label for="">He leído y aceptado la <span style="color: blue;"><i>política de datos y normas de uso</i></span></label><label for="" id="errorcheckbox" class="error"></label> <br><br>     
+
+    <button onclick="validar()">ENVIAR</button>
+
+    <p id="exito"></p>
+
+    <script>
+        function validar() {
+            let asunto=document.getElementById('asunto').value;
+            let dni=document.getElementById('dni').value;
+            let nombre=document.getElementById('nombre').value;
+            let primero=document.getElementById('primero').value;
+            let segundo=document.getElementById('segundo').value;
+            let fecha=document.getElementById('fecha').value;
+            let tel=document.getElementById('tel').value;
+            let email=document.getElementById('email').value;
+            let domicilio=document.getElementById('domicilio').value;
+            let cp=document.getElementById('cp').value;
+            let municipio=document.getElementById('municipio').value;
+            let oficina=document.getElementById('oficina').value;
+            let info=document.getElementById('info').value;
+            let anexo1=document.getElementById('anexo1').value;
+            let tañamoanex1=document.getElementById('anexo1').files[0];
+            let tañamoanex2=document.getElementById('anexo2').files[0];
+            let anexo2=document.getElementById('anexo2').value;
+            let checkbox=document.getElementById('terminos').checked;
+
+    
+            let errores=0;
+
+            document.getElementById('errorasunto').innerHTML='';
+            document.getElementById('errornombre').innerHTML='';
+            document.getElementById('errorprimero').innerHTML='';
+            document.getElementById('erroremail').innerHTML='';
+            document.getElementById('errordomicilio').innerHTML='';
+            document.getElementById('errormunicipio').innerHTML='';
+            document.getElementById('errortel').innerHTML='';
+            document.getElementById('errordni').innerHTML='';
+            document.getElementById('erroroficina').innerHTML='';
+            document.getElementById('erroranexo1').innerHTML='';
+            document.getElementById('erroranexo2').innerHTML='';
+            document.getElementById('errorinfo').innerHTML='';
+            document.getElementById('errorcp').innerHTML='';
+            document.getElementById('errorcheckbox').innerHTML='';
+
+
+
+            document.getElementById('exito').innerHTML='';
+
+
+            if(asunto==""){
+                document.getElementById('errorasunto').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(dni==''){
+                document.getElementById('errordni').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            else if(nif(dni)==false){
+                document.getElementById('errordni').innerHTML=' DNI no válido. Revise si lo ha escrito bien';
+                errores++;
+            }
+            if(nombre==''){
+                document.getElementById('errornombre').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(primero==''){
+                document.getElementById('errorprimero').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            if(fecha==''){
+                document.getElementById('errorfecha').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(email==''){
+                document.getElementById('erroremail').innerHTML=' Debe rellenar este campo';
+                errores++;
+            }
+            else if(validateEmail()==false){
+                document.getElementById('erroremail').innerHTML=' El correo no es valido';
+                errores++
+            }
+            
+            if(tel==''){
+                document.getElementById('errortel').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(cp==''){
+                document.getElementById('errorcp').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(domicilio==''){
+                document.getElementById('errordomicilio').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(municipio==''){
+                document.getElementById('errormunicipio').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(oficina==''){
+                document.getElementById('erroroficina').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(info==''){
+                document.getElementById('errorinfo').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(anexo1==''){
+                document.getElementById('erroranexo1').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            else if(tañamoanex1.size>2097152){
+                document.getElementById('erroranexo1').innerHTML='Este archivo es demasiado grande';
+                errores++;
+            }
+            
+            if(anexo2==''){
+                document.getElementById('erroranexo2').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            else if(tañamoanex2.size>2097152){
+                document.getElementById('erroranexo2').innerHTML='Este archivo es demasiado grande';
+                errores++;
+            }
+            if(!checkbox){
+                document.getElementById('errorcheckbox').innerHTML='Debe rellenar este campo';
+                errores++;
+            }
+            if(errores==0){
+                document.getElementById('exito').innerHTML='Completado con éxito'
+            }
+
+
+        }
+
+        function nif(dni) {
+            var numero
+            var letr
+            var letra
+            var expresion_regular_dni
+            var valido
+ 
+            expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+ 
+            if(expresion_regular_dni.test (dni) == true){
+            numero = dni.substr(0,dni.length-1);
+            letr = dni.substr(dni.length-1,1);
+            numero = numero % 23;
+            letra='TRWAGMYFPDXBNJZSQVHLCKET';
+            letra=letra.substring(numero,numero+1);
+            if (letra!=letr.toUpperCase()) {
+            valido=false;
+            }else{
+            valido=true;
+            }
+            }else{
+            valido=false;
+            }
+            return valido
+        }
+
+        function validarPinNumerico(id){
+            var dato_a_comprobar = id;
+            var valoresAceptados = /^[0-9]+$/;
+            var valido
+            if (dato_a_comprobar.match(valoresAceptados)){
+             valido= true;
+            } else {
+             valido=false;
+            }
+            return valido
+        }
+
+        function validateEmail(){
+                
+                // Get our input reference.
+                var emailField = document.getElementById('email');
+                
+                // Define our regular expression.
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{1,10})+$/;
+
+                var valido
+            
+                // Using test we can check if the text match the pattern
+                if( validEmail.test(emailField.value) ){
+                    valido=true;
+                }else{
+                    valido=false;
+                }
+                return valido
+        }
+        
+    </script>
+
+</body>
+</html>

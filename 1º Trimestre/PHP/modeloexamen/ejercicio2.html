@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIEMPO</title>
+</head>
+<body>
+    <h1>
+        CONSULTA EL TIEMPO EN TU CIUDAD
+    </h1>
+    <input type="text" id="ciudad"><button>CONSULTA</button>
+
+    <p id="tiempo"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function (e) { 
+                e.preventDefault();
+                let api='0c4b9765a0ad5a5ea1321daddb4a7c3e';
+                let ciudad=$('#ciudad').val();
+                $.ajax({
+                    type: "get",
+                    url: `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${api}&units=metric`,
+                    success: function (r) {
+                        console.log(r);
+                        $('#tiempo').html(r.name+'<br><br>'+ 
+                                          r.weather[0].description+'<br><br>'+
+                                          r.main.temp+'ºC <br><br>'+
+                                          'Latitud: '+r.coord.lat+
+                                          '   Longitud: '+r.coord.lon);
+
+                        
+                    }
+                });      
+            });
+        })
+    </script>
+</body>
+</html>
