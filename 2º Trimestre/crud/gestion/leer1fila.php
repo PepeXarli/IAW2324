@@ -9,7 +9,7 @@
         if ($result->rowCount() > 0) {
             echo "<table><tr><th>ID</th><th>Name</th></tr>";
             // output data of each row
-            while($row = $result->fetch_assoc()) {
+            while($row = $result->fetch()) {
             echo "<tr><td>".$row["id"]."</td><td>".$row["username"]." ".$row["password"]."</td></tr>";
             }
             echo "</table>";
