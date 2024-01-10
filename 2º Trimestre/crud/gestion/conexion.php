@@ -9,7 +9,7 @@
     $conn = new PDO("mysql:host=$servername;dbname=$bd", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Conectado con éxito a $servername con usuario $username y contraseña $password";
+    echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
     } catch(PDOException $e) {
     echo "Error de conexion quillo " . $e->getMessage();
     }

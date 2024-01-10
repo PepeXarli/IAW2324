@@ -3,7 +3,7 @@
     include "conexion.php";
 
         // echo "SELECT * FROM usuarios WHERE id=1";
-        $sql = "SELECT * FROM usuarios LIMIT 1";
+        $sql = "SELECT * FROM usuarios LIMIT 2";
         $result = $conn->query($sql);
         
         if ($result->rowCount() > 0) {
