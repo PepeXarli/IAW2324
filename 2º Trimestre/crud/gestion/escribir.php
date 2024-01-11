@@ -1,13 +1,9 @@
 <?php
     //Conexión a base de datos mediante PDO
     include "conexion.php";
-
-        // echo "SELECT * FROM usuarios WHERE id=1";
-        $sql = "INSERT INTO usuarios VALUES(NULL,'antonio', 'superantonio'";
-        
-        
+    
     try {
-        $sql = "INSERT INTO usuarios VALUES(NULL,'antonio', 'superantonio')";
+        $sql = "INSERT INTO usuarios (username,password) VALUES('antonio', 'superantonio')";
         // use exec() because no results are returned
         $conn->exec($sql);
         echo "La acción se ha realziado con éxito";
