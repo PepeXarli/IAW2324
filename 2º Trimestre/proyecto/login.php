@@ -42,8 +42,9 @@
     
             header("Content-type:text/html;charset=utf-8");
 
-            $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario' AND contraseña='$passwd'";
-        $result = $conn->query($comprobar);
+            $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario ' AND contrasena='$passwd'";
+            $result = $conn->query($comprobar);
+
             
             if ($result->rowCount() > 0) {
                 // Mira si el usuario ha sido registrado
