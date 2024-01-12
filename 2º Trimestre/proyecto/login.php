@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN|PROYECTO</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <div>
+    <div class='caja'>
         <h1>
             Iniciar Sesión
         </h1>
@@ -23,39 +24,39 @@
         </div>
     </div>
 
-        <?php
-    //Conexión a base de datos mediante PDO
+    <?php
+        //Conexión a base de datos mediante PDO
 
-    if(isset($_POST['submit'])){
+        if(isset($_POST['submit'])){
 
-        $usuario=htmlspecialchars($_POST['usuario']);
-        $passwd=base64_encode(htmlspecialchars($_POST['contrasena']));
-        
-
-        if($usuario==null OR $passwd==null){
-            echo "Todos los campos son obligatorios";
-        } else{
-
-            $showMessages = false;
-
-            include "conexion.php";
-    
-            header("Content-type:text/html;charset=utf-8");
-
-            $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario ' AND contrasena='$passwd'";
-            $result = $conn->query($comprobar);
-
+            $usuario=htmlspecialchars($_POST['usuario']);
+            $passwd=base64_encode(htmlspecialchars($_POST['contrasena']));
             
-            if ($result->rowCount() > 0) {
-                // Mira si el usuario ha sido registrado
-                echo "Inicio de sesión correcto";
-    
-            } else {
-                echo "Usuario o contraseña incorrecto";
+
+            if($usuario==null OR $passwd==null){
+                echo "Todos los campos son obligatorios";
+            } else{
+
+                $showMessages = false;
+
+                include "conexion.php";
+        
+                header("Content-type:text/html;charset=utf-8");
+
+                $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario ' AND contrasena='$passwd'";
+                $result = $conn->query($comprobar);
+
+                
+                if ($result->rowCount() > 0) {
+                    // Mira si el usuario ha sido registrado
+                    echo "Inicio de sesión correcto";
+        
+                } else {
+                    echo "Usuario o contraseña incorrecto";
+                }
+            $conn->close();
             }
-        $conn->close();
         }
- }
     ?>
 
 </body>
