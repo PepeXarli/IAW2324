@@ -1,10 +1,6 @@
 <?php
+    ob_start(); //Conexión a base de datos mediante PDO
     
-    ob_start();
-
-
- 
-    //Conexión a base de datos mediante PDO
     $servername = "sql307.byetcluster.com";
     $username = "thsi_35748569";
     $password = "U?daGhYf";
@@ -20,6 +16,13 @@
     
     if ($showMessages) {
         echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
+
+        session_start();
+        if (!isset($_SESSION['usuario'])) {
+            header('Location: login.php');
+            session_abort();
+        }
+    
     }
     
     } catch(PDOException $e) {
@@ -29,6 +32,8 @@
         }
     exit();
     }
+
+    
 
     ob_end_flush();
 ?>

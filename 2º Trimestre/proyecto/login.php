@@ -19,7 +19,7 @@
             <input type="text" name='usuario' placeholder='Ej.:Manolito'> <br>
             <label for="">Contraseña</label>
             <input type="password" name='contrasena' placeholder='Ej.:sUp3rM4N0lit0'><br> <br>
-            <button name="submit" type="submit" class="myButton">Login</button>
+            <button name="submit" type="submit" class="myButton" >Login</button>
             </form>
         </div>
         <label for="" id="mensaje" class=''></label>
@@ -56,6 +56,10 @@
                     // Mira si el usuario ha sido registrado
                     echo "<script> document.getElementById('mensaje').innerHTML='Inicio de sesión correcto';
                     document.getElementById('mensaje').className='acierto'</script>";
+
+                    sleep(1.5);
+                    $_SESSION['usuario']=$usuario;
+                    header("Location: incidencias.php");
         
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario o contraseña incorrecto'
