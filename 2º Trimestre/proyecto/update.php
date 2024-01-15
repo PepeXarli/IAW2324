@@ -77,7 +77,7 @@
     </form>    
   </div>
 
-    <div class="container text-center mt-5">
+    <div id='volver' class="container text-center mt-5">
       <a href="incidencias.php" class="btn btn-warning mt-5"> Volver </a>
     <div>
 

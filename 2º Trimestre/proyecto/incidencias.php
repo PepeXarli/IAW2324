@@ -29,7 +29,6 @@
           <?php
             $query="SELECT * FROM incidencias";               
             $vista_incidencias= $conn->query($query);
-            echo $_SESSION['usuario'];
 
             while($row = $vista_incidencias->fetch()){
               $id = $row['id'];                

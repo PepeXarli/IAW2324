@@ -5,7 +5,7 @@
         $usuario=$_SESSION['usuario'];
     }
     else{
-        header('Location: http://pepe.thsite.top/crud/proyecto/login.php');
+        header('Location: http://pepe.thsite.top/proyecto/login.php');
         session_abort();
         die();
     }
