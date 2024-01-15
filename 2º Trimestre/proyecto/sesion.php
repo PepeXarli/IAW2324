@@ -1,7 +1,7 @@
 <?php
     session_set_cookie_params(120);
     session_start();
-    if($_SESSION['viene']=="si"){
+    if(isset($_SESSION['usuario'])){
         $usuario=$_SESSION['usuario'];
     }
     else{

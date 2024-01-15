@@ -6,7 +6,6 @@
 
 <!-- Navbar -->
 
-
   <div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
       <a href="create.php" class='btn btn-outline-dark mb-2'> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
@@ -30,6 +29,7 @@
           <?php
             $query="SELECT * FROM incidencias";               
             $vista_incidencias= $conn->query($query);
+            echo $_SESSION['usuario'];
 
             while($row = $vista_incidencias->fetch()){
               $id = $row['id'];                
@@ -40,6 +40,12 @@
               $fecha_rev = $row['revision'];        
               $fecha_sol = $row['resolucion'];        
               $comentario = $row['comentario']; 
+              if($fecha_rev='0000-00-00'){
+                $fecha_rev='';
+              }
+              if($fecha_sol='0000-00-00'){
+                $fecha_sol='';
+              }
               echo "<tr >";
               echo " <th scope='row' >{$id}</th>";
               echo " <td > {$planta}</td>";

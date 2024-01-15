@@ -27,19 +27,40 @@
     <form action="" method="post">
       <div class="form-group">
         <label for="planta" class="form-label">Planta</label>
-        <input type="text" name="planta"  class="form-control">
+        <select name="planta" id="planta" class="form-control" required>
+          <option value="Baja">Baja</option>
+          <option value="primera">Primera</option>
+          <option value="Segunda">Segunda</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="aula" class="form-label">Aula</label>
-        <input type="text" name="aula"  class="form-control">
+        <select name="aula" id="aula" class="form-control" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+
+        </select>
       </div>
       <div class="form-group">
         <label for="descripcion" class="form-label">Descripcion</label>
-        <input type="text" name="descripcion"  class="form-control">
+        <input type="text" name="descripcion"  class="form-control" required>
       </div>
       <div class="form-group">
         <label for="fecha_alta" class="form-label">Fecha Alta</label>
-        <input type="date" name="alta"  class="form-control">
+        <input type="date" name="alta"  class="form-control" required>
       </div>
       <div class="form-group">
         <label for="fecha_rev" class="form-label">Fecha Revisión</label>

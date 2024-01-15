@@ -17,12 +17,6 @@
     if ($showMessages) {
         echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
 
-        session_start();
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: login.php');
-            session_abort();
-        }
-    
     }
     
     } catch(PDOException $e) {

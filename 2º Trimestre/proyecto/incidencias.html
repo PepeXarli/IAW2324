@@ -1,10 +1,3 @@
-<?php 
-include 'sesion.php';
-$showMessages= false;
-include 'conexion.php';
-
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +15,6 @@ include 'conexion.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="css/incidencias.css">
-
 </head>
 <body>
 
@@ -73,9 +65,7 @@ include 'conexion.php';
         
         <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" alt="" style="width: 25px; height: auto;">
 
-        <?php
-            echo $_SESSION['usuario'];
-        ?>
+
 
       </div>
     </div>
@@ -91,3 +81,50 @@ import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
 initMDB({ Collapse, Ripple });
 </script>
     
+    <div class="container">
+        <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
+          <a href="create.php" class='btn btn-outline-dark mb-2' id="anadir"> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
+            <table class="table table-striped table-bordered table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th  scope="col">ID</th>
+                  <th  scope="col">Planta</th>
+                  <th  scope="col">Aula</th>
+                  <th  scope="col">Descripción</th>
+                  <th  scope="col">Fecha alta</th>
+                  <th  scope="col">Fecha revisión</th>
+                  <th  scope="col">Fecha solución</th>
+                  <th  scope="col">Comentario</th>
+                  <th  scope="col" colspan="3" class="text-center">Operaciones</th>
+                </tr>  
+              </thead>
+                <tbody>
+                  <tr>
+                   <tr >  
+                        <th scope='row' >{$id}</th>  
+                         <td > {$planta}</td>  
+                         <td > {$aula}</td>  
+                         <td >{$descripcion} </td>  
+                         <td >{$fecha_alta} </td>  
+                         <td >{$fecha_rev} </td>  
+                         <td >{$fecha_sol} </td>  
+                         <td >{$comentario} </td>  
+                         <td class='text-center'> <a href='view.php?incidencias_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>  
+                         <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>  
+                         <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>  
+                         </tr>   
+                         <tr >  
+                            <th scope='row' >{$id}</th>  
+                             <td > {$planta}</td>  
+                             <td > {$aula}</td>  
+                             <td >{$descripcion} </td>  
+                             <td >{$fecha_alta} </td>  
+                             <td >{$fecha_rev} </td>  
+                             <td >{$fecha_sol} </td>  
+                             <td >{$comentario} </td>  
+                             <td class='text-center'> <a href='view.php?incidencias_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>  
+                             <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>  
+                             <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>  
+                             </tr>  
+</body>
+</html>
