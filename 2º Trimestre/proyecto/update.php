@@ -31,7 +31,7 @@
       $revision = htmlspecialchars($_POST['revision']);
       $resolucion = htmlspecialchars($_POST['resolucion']);
       $comentario = htmlspecialchars($_POST['comentario']);
-      $query = "UPDATE incidencias SET planta = '{$planta}' , aula = '{$aula}' , descripcion = '{$descripcion}', Alta = '{$alta}', Revision = '{$revison}', Resolucion = '{$resolucion}', Comentario = '{$comentario}' WHERE id = {$id}";
+      $query = "UPDATE incidencias SET planta = '{$planta}' , aula = '{$aula}' , descripcion = '{$descripcion}', Alta = '{$alta}', Revision = '{$revision}', Resolucion = '{$resolucion}', Comentario = '{$comentario}' WHERE id = {$id}";
       $incidencia_actualizada = $conn->query($query);
       if (!$incidencia_actualizada)
         echo "Se ha producido un error al actualizar la incidencia.";
@@ -57,15 +57,15 @@
       </div>
       <div class="form-group">
         <label for="fecha_alta" >Fecha alta</label>
-        <input type="date" name="alta" class="form-control" value="<?php echo $fecha_alta  ?>">
+        <input type="date" name="alta" class="form-control" value="<?php echo $alta  ?>">
       </div>
       <div class="form-group">
         <label for="fecha_rev" >Fecha revisión</label>
-        <input type="date" name="revision" class="form-control" value="<?php echo $fecha_rev  ?>">
+        <input type="date" name="revision" class="form-control" value="<?php echo $revision  ?>">
       </div>
       <div class="form-group">
         <label for="fecha_sol" >Fecha solución</label>
-        <input type="date" name="resolucion" class="form-control" value="<?php echo $fecha_sol  ?>">
+        <input type="date" name="resolucion" class="form-control" value="<?php echo $resolucion ?>">
       </div>
       <div class="form-group">
         <label for="comentario" >Comentario</label>

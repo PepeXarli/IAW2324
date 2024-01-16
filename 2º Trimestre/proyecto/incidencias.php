@@ -8,7 +8,7 @@
 
   <div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
-      <a href="create.php" class='btn btn-outline-dark mb-2'> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
+      <a href="create.php" class='btn btn-outline-dark mb-2' id="anadir"> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
         <table class="table table-striped table-bordered table-hover">
           <thead class="table-dark">
             <tr>
@@ -35,24 +35,24 @@
               $planta = $row['planta'];        
               $aula = $row['aula'];         
               $descripcion = $row['descripcion'];        
-              $fecha_alta = $row['alta'];        
-              $fecha_rev = $row['revision'];        
-              $fecha_sol = $row['resolucion'];        
+              $alta = $row['alta'];        
+              $revision = $row['revision'];        
+              $resolucion = $row['resolucion'];        
               $comentario = $row['comentario']; 
-              if($fecha_rev='0000-00-00'){
-                $fecha_rev='';
+              if($revision=='0000-00-00'){
+                $revision='';
               }
-              if($fecha_sol='0000-00-00'){
-                $fecha_sol='';
+              if($resolucion=='0000-00-00'){
+                $resolucion='';
               }
               echo "<tr >";
               echo " <th scope='row' >{$id}</th>";
               echo " <td > {$planta}</td>";
               echo " <td > {$aula}</td>";
               echo " <td >{$descripcion} </td>";
-              echo " <td >{$fecha_alta} </td>";
-              echo " <td >{$fecha_rev} </td>";
-              echo " <td >{$fecha_sol} </td>";
+              echo " <td >{$alta} </td>";
+              echo " <td >{$revision} </td>";
+              echo " <td >{$resolucion} </td>";
               echo " <td >{$comentario} </td>";
               echo " <td class='text-center'> <a href='view.php?incidencias_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> Ver</a> </td>";
               echo " <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";

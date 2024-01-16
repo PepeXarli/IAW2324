@@ -6,11 +6,11 @@
         $aula = htmlspecialchars($_POST['aula']);
         $descripcion = htmlspecialchars($_POST['descripcion']);
         $comentario = htmlspecialchars($_POST['comentario']);
-        $fecha_alta = htmlspecialchars($_POST['alta']);
-        $fecha_rev = htmlspecialchars($_POST['revision']);
-        $fecha_sol = htmlspecialchars($_POST['resolucion']);
+        $alta = htmlspecialchars($_POST['alta']);
+        $revision = htmlspecialchars($_POST['revision']);
+        $resolucion = htmlspecialchars($_POST['resolucion']);
       
-        $query= "INSERT INTO incidencias(planta, aula, descripcion, alta, revision, resolucion, comentario) VALUES('{$planta}','{$aula}','{$descripcion}','{$fecha_alta}','{$fecha_rev}','{$fecha_sol}','{$comentario}')";
+        $query= "INSERT INTO incidencias(planta, aula, descripcion, alta, revision, resolucion, comentario) VALUES('{$planta}','{$aula}','{$descripcion}','{$alta}','{$revision}','{$resolucion}','{$comentario}')";
         $resultado = $conn->query($query);
     
           if (!$resultado) {

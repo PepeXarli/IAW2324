@@ -30,7 +30,7 @@ include 'conexion.php';
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+    <a class="navbar-brand me-2" href="https://iesamachado.es/">
       <img
         src="https://www.juntadeandalucia.es/averroes/centros-tic/41009071/helvia/sitio/upload/img/logomachadopeque.jpg"
         height="16"
@@ -67,11 +67,11 @@ include 'conexion.php';
       </ul>
       <!-- Left links -->
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" id="dchanav">
       <a class="btn btn-link px-3 me-2" href="login.php" style="color: white;">Cerrar sesión</a>
 
         
-        <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" alt="" style="width: 25px; height: auto;">
+        <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" id='persona' alt="" >
 
         <?php
             echo $_SESSION['usuario'];
