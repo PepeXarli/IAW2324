@@ -23,6 +23,8 @@ include 'conexion.php';
 
 <link rel="stylesheet" href="css/incidencias.css">
 
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 <body>
 

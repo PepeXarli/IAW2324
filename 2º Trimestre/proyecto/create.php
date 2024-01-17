@@ -36,21 +36,21 @@
       <div class="form-group">
         <label for="aula" class="form-label">Aula</label>
         <select name="aula" id="aula" class="form-control" required>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
+          <option value="1">Aula 1</option>
+          <option value="2">Aula 2</option>
+          <option value="3">Aula 3</option>
+          <option value="4">Aula 4</option>
+          <option value="5">Aula 5</option>
+          <option value="6">Aula 6</option>
+          <option value="7">Aula 7</option>
+          <option value="8">Aula 8</option>
+          <option value="9">Aula 9</option>
+          <option value="10">Aula 10</option>
+          <option value="11">Aula 11</option>
+          <option value="12">Aula 12</option>
+          <option value="13">Aula 13</option>
+          <option value="14">Aula 14</option>
+          <option value="15">Aula 15</option>
 
         </select>
       </div>
@@ -60,7 +60,7 @@
       </div>
       <div class="form-group">
         <label for="fecha_alta" class="form-label">Fecha Alta</label>
-        <input type="date" name="alta"  class="form-control" required>
+        <input type="date" name="alta" id="fecha" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="fecha_rev" class="form-label">Fecha Revisión</label>
@@ -83,3 +83,21 @@
     <a href="incidencias.php" class="btn btn-warning mt-5"> Volver </a>
   <div>
 <?php include "footer.php" ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+
+    var now = new Date();
+
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    $("#fecha").val(today);
+
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("alta")[0].setAttribute('max', today);
+});
+</script>

@@ -22,18 +22,28 @@
               if (isset($_GET['incidencias_id'])) {
                   $incidenciaid = htmlspecialchars($_GET['incidencias_id']); 
                   $query="SELECT * FROM incidencias WHERE id = $incidenciaid LIMIT 1";  
-                  $vista_incidencias= $conn->query($query);            
+                  $vista_incidencias= $conn->query($query);     
+      
 
                   while($row = $vista_incidencias->fetch())
                   {
+                    $alta = $row['alta'];        
+                    $revision = $row['revision'];        
+                    $resolucion = $row['resolucion']; 
+                    if($revision=='0000-00-00'){
+                      $revision='';
+                    }
+                    if($resolucion=='0000-00-00'){
+                      $resolucion='';
+                    } 
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['planta'] . "</td>";
                         echo "<td>" . $row['aula'] . "</td>";
                         echo "<td>" . $row['descripcion'] . "</td>";
-                        echo "<td>" . $row['alta'] . "</td>";
-                        echo "<td>" . $row['revision'] . "</td>";
-                        echo "<td>" . $row['resolucion'] . "</td>";
+                        echo "<td>" . $alta . "</td>";
+                        echo "<td>" . $revision . "</td>";
+                        echo "<td>" . $resolucion . "</td>";
                         echo "<td>" . $row['comentario'] . "</td>";
                         echo " </tr> ";
                   }

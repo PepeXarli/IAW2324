@@ -45,11 +45,32 @@
     <form action="" method="post">
       <div class="form-group">
         <label for="planta" >Planta</label>
-        <input type="text" name="planta" class="form-control" value="<?php echo $planta  ?>">
+        <select name="planta" id="planta" class="form-control" value="<?php echo $planta  ?>" required>
+          <option value="Baja">Baja</option>
+          <option value="primera">Primera</option>
+          <option value="Segunda">Segunda</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="aula" >Aula</label>
-        <input type="text" name="aula" class="form-control" value="<?php echo $aula  ?>">
+        <select name="aula" id="aula" class="form-control" value="<?php echo $aula  ?>" required>
+          <option value="1">Aula 1</option>
+          <option value="2">Aula 2</option>
+          <option value="3">Aula 3</option>
+          <option value="4">Aula 4</option>
+          <option value="5">Aula 5</option>
+          <option value="6">Aula 6</option>
+          <option value="7">Aula 7</option>
+          <option value="8">Aula 8</option>
+          <option value="9">Aula 9</option>
+          <option value="10">Aula 10</option>
+          <option value="11">Aula 11</option>
+          <option value="12">Aula 12</option>
+          <option value="13">Aula 13</option>
+          <option value="14">Aula 14</option>
+          <option value="15">Aula 15</option>
+
+        </select>
       </div>
       <div class="form-group">
         <label for="descripcion" >Descripción</label>
