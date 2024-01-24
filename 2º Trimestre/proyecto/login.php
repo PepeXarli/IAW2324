@@ -52,15 +52,20 @@
 
                 $comprobar = "SELECT * FROM usuproyecto where usuario='$usuario' AND contrasena='$passwd'";
                 $result = $conn->query($comprobar);
+                while($row=$result->fetch()){
+                    $admin=$row['admin'];
+                    
+                }
 
                 
                 if ($result->rowCount() > 0) {
                     // Mira si el usuario ha sido registrado
                     echo "<script> document.getElementById('mensaje').innerHTML='Inicio de sesión correcto';
-                    document.getElementById('mensaje').className='acierto'</script>";
-
+                    document.getElementById('mensaje').className='acierto'</script>";   
+                    
                     session_start();
                     $_SESSION['usuario']=$usuario;
+                    $_SESSION['admin']=$admin;
                     header("Refresh:1; url=incidencias.php");
         
                 } else {

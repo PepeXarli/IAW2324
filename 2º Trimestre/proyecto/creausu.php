@@ -22,7 +22,7 @@
             <label for="" class='preg'>Repita la contraseña</label>
             <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
             <label for="planta" class="form-label" class='preg'>Rol</label>
-            <select name="planta" id="planta" class="form-control preg" required>
+            <select name="admin" id="planta" class="form-control preg" required>
                 <option value="0">Dirección</option>
                 <option value="0">Profesor</option>
                 <option value="1">Administrador</option>
@@ -44,6 +44,8 @@
             $usuario=htmlspecialchars($_POST['usuario']);
             $passwd=base64_encode(htmlspecialchars($_POST['contrasena']));
             $passwd2=base64_encode(htmlspecialchars($_POST['contrasena2']));
+            $admin=(htmlspecialchars($_POST['admin']));
+
             
 
             if($usuario==null OR $passwd==null){
@@ -70,7 +72,7 @@
 
                     /*insert*/
 
-                    $insert = "INSERT INTO usuproyecto (usuario,contrasena) VALUES('$usuario','$passwd')";
+                    $insert = "INSERT INTO usuproyecto (usuario,contrasena,admin) VALUES('$usuario','$passwd','$admin')";
                     $resultado = $conn->query($insert);
 
 
@@ -80,7 +82,7 @@
                     session_start();
                     sleep(1);
                     $_SESSION['usuario']=$usuario;
-                    header('Location: incidencias.php');
+                    header('Location: login.php');
 
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario ya existente'
