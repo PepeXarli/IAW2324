@@ -19,9 +19,12 @@
 
   <div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
-    <h4 class="text-center" >Incidencias totales: <?php echo $vistatot->fetch()[0]; ?> </h4>
-    <h4 class="text-center" >Incidencias resueltas: <?php echo $vistares->fetch()[0]; ?> </h4>
-    <h4 class="text-center" >Incidencias pendientes: <?php echo $vistapen->fetch()[0]; ?> </h4>
+    <div id="contadores">
+      <h4 class="text-center" >Incidencias totales: <?php echo $vistatot->fetch()[0]; ?> </h4>
+      <h4 class="text-center" >Incidencias resueltas: <?php echo $vistares->fetch()[0]; ?> </h4>
+      <h4 class="text-center" >Incidencias pendientes: <?php echo $vistapen->fetch()[0]; ?> </h4>
+    </div>
+    
       <a href="create.php" class='btn btn-outline-dark mb-2' id="anadir"> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
         <table class="table table-striped table-bordered table-hover">
           <thead class="table-dark">

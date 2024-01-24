@@ -32,7 +32,7 @@ include 'conexion.php';
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
-    <a class="navbar-brand me-2" href="https://iesamachado.es/">
+    <a class="navbar-brand me-2" href="https://iesamachado.es/" id="machado">
       <img
         src="https://www.juntadeandalucia.es/averroes/centros-tic/41009071/helvia/sitio/upload/img/logomachadopeque.jpg"
         height="16"
@@ -61,13 +61,13 @@ include 'conexion.php';
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="incidencias.php" style="color: white;">Inicio</a>
+          <a class="nav-link" href="incidencias.php" style="color: white;" id="corto">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="create.php" style="color: white;">Crear incidencia</a>
+          <a class="nav-link" href="create.php" style="color: white;" id="largo">Crear incidencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="creausu.php" style="color: white;">Crear usuario</a>
+          <a class="nav-link" href="creausu.php" style="color: white;" id="largo">Crear usuario</a>
         </li>
       </ul>
       <!-- Left links -->

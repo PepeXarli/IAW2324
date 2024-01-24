@@ -60,9 +60,8 @@
                     document.getElementById('mensaje').className='acierto'</script>";
 
                     session_start();
-                    sleep(1.5);
                     $_SESSION['usuario']=$usuario;
-                    header("Location: incidencias.php");
+                    header("Refresh:1; url=incidencias.php");
         
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario o contraseña incorrecto'

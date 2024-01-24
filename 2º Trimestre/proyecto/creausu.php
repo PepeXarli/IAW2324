@@ -21,7 +21,7 @@
             <input type="password" name='contrasena' placeholder='Ej.:sUp3rM4N0lit0'><br> 
             <label for="" class='preg'>Repita la contraseña</label>
             <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
-            <label for="planta" class="form-label" class='preg'>Planta</label>
+            <label for="planta" class="form-label" class='preg'>Rol</label>
             <select name="planta" id="planta" class="form-control preg" required>
                 <option value="0">Dirección</option>
                 <option value="0">Profesor</option>
