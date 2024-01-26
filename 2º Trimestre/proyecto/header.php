@@ -67,7 +67,7 @@ include 'conexion.php';
           <a class="nav-link" href="create.php" style="color: white;" id="largo">Crear incidencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="verifica_admin.php" style="color: white;" id="largo">Crear usuario</a>
+          <a class="nav-link" href="creausu.php" style="color: white;" id="largo">Crear usuario</a>
         </li>
       </ul>
       <!-- Left links -->

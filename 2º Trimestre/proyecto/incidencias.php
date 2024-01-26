@@ -18,7 +18,7 @@
           ?>
 
   <div class="container">
-    <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
+    <h1 class="text-center" >Incidencias IES Antonio Machado</h1>
     <div id="contadores">
       <h4 class="text-center" >Incidencias totales: <?php echo $vistatot->fetch()[0]; ?> </h4>
       <h4 class="text-center" >Incidencias resueltas: <?php echo $vistares->fetch()[0]; ?> </h4>

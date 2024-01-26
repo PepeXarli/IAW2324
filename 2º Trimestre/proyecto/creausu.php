@@ -1,3 +1,16 @@
+<?php
+
+    session_start();
+    session_set_cookie_params(120);
+
+    if($_SESSION['admin']!="1"){
+        echo "<script> alert ('Debe ser admin para acceder a esta página') 
+        window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,9 +69,11 @@
                 document.getElementById('mensaje').className='error'</script>";
             } else{
 
-                $showMessages = false;
+                $showMessages = true;
 
                 include "conexion.php";
+
+                //echo $_SESSION['admin'];
         
                 header("Content-type:text/html;charset=utf-8");
 
