@@ -69,7 +69,7 @@
                 document.getElementById('mensaje').className='error'</script>";
             } else{
 
-                $showMessages = true;
+                $showMessages = false;
 
                 include "conexion.php";
 
