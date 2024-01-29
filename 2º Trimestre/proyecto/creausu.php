@@ -3,7 +3,7 @@
     session_start();
     session_set_cookie_params(120);
 
-    if($_SESSION['admin']!="1"){
+    if($_SESSION['admin']!="Administrador"){
         echo "<script> alert ('Debe ser admin para acceder a esta página') 
         window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
     }
@@ -36,9 +36,9 @@
             <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
             <label for="planta" class="form-label" class='preg'>Rol</label>
             <select name="admin" id="planta" class="form-control preg" required>
-                <option value="0">Dirección</option>
-                <option value="0">Profesor</option>
-                <option value="1">Administrador</option>
+                <option value="Dirección">Dirección</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Administrador">Administrador</option>
             </select>
             <button name="submit" type="submit" class="myButton" >Crear</button>
             </form>

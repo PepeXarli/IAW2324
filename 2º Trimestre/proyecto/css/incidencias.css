@@ -66,3 +66,20 @@ nav a{
 #contadores{
     margin-top: 5px;
 }
+
+#tablausus{
+    width: 50%;
+    margin-top: 3%;
+
+}
+
+#tablausus thead tr{
+    width: 100%;
+}
+
+.conttabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

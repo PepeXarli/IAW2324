@@ -34,7 +34,7 @@ include 'conexion.php';
     <!-- Navbar brand -->
     <a class="navbar-brand me-2" href="https://iesamachado.es/" id="machado">
       <img
-        src="https://www.juntadeandalucia.es/averroes/centros-tic/41009071/helvia/sitio/upload/img/logomachadopeque.jpg"
+        src="images/machado.jpg"
         height="16"
         alt="MDB Logo"
         loading="lazy"
@@ -68,6 +68,9 @@ include 'conexion.php';
         </li>
         <li class="nav-item">
           <a class="nav-link" href="creausu.php" style="color: white;" id="largo">Crear usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="usuarios.php" style="color: white;" id="largo">Usuarios</a>
         </li>
       </ul>
       <!-- Left links -->
