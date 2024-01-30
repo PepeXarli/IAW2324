@@ -50,7 +50,7 @@
               echo "<tr >";
               echo " <th scope='row' class='text-center'>{$usuario}</th>";
               echo " <td class='text-center'> {$rol}</td>";
-              echo " <td class='text-center' > <a href='update.php?editar&incidencias_id={$usuario}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
+              echo " <td class='text-center' > <a href='edituser.php?editar&usuario={$usuario}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
               echo " <td class='text-center'>  <a href='deleteuser.php?eliminar={$usuario}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
               echo " </tr> ";
             }  
