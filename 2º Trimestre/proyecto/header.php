@@ -61,16 +61,16 @@ include 'conexion.php';
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="incidencias.php" style="color: white;" id="corto">Inicio</a>
+          <a class="nav-link corto" href="incidencias.php" style="color: white;" >Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="create.php" style="color: white;" id="largo">Crear incidencia</a>
+          <a class="nav-link largo" href="create.php" style="color: white;" >Crear incidencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="creausu.php" style="color: white;" id="largo">Crear usuario</a>
+          <a class="nav-link largo" href="creausu.php" style="color: white;" id='creausus'>Crear usuario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="usuarios.php" style="color: white;" id="largo">Usuarios</a>
+          <a class="nav-link corto" href="usuarios.php" style="color: white;" id='usuarios'>Usuarios</a>
         </li>
       </ul>
       <!-- Left links -->
@@ -99,3 +99,11 @@ import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
 initMDB({ Collapse, Ripple });
 </script>
     
+<?php
+  if($_SESSION['admin']!="Administrador"){
+    echo "<script> 
+            document.getElementById('usuarios').className = 'invisible'
+            document.getElementById('creausus').className = 'invisible'
+          </script>";
+}
+?>
