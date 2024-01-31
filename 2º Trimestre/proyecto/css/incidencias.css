@@ -53,13 +53,13 @@ nav a{
 
 
 
-#corto{
+.corto{
     width: 50px;
     margin-right: 10px;
     margin-left: 5px;
 }
 
-#largo{
+.largo{
     width: 133px;
 }
 
@@ -82,4 +82,8 @@ nav a{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.invisible {
+    display: none;
 }

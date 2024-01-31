@@ -33,7 +33,7 @@
   <div class="container ">
   <div>
             <form action="#" method="post" id="formu">
-            <label for="">Nombre de usuario: </label> <?php echo $usuario; ?> <br>
+            <?php echo "<h4>" . strtoupper($usuario) . "</h4>" ?> <br>
             <label for="planta" class="form-label" class='preg'>Rol</label>
             <select name="admin" id="planta" class="form-control preg" required>
                 <option value="Dirección">Dirección</option>
