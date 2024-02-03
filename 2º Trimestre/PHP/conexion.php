@@ -1,17 +1,33 @@
 <?php
+    ob_start(); //Conexión a base de datos mediante PDO
+    
+    $servername = "sql307.byetcluster.com";
+    $username = "thsi_35748569";
+    $password = "U?daGhYf";
+    $bd="thsi_35748569_bdpruebas";
 
-    // Conexion con la base de datos
-    header("Content-type:text/html;charset=utf-8");
-    $enlace = mysqli_connect("database-5014808652.webspace-host.com","dbu4078777","Amazonas1","dbs12303808");
-    if (!$enlace) {
-        echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-        echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-        echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    if (!isset($showMessages)) {
+        $showMessages = true;
     }
-    else
-    {
-        echo "Éxito: Se realizó una conexión apropiada a MySQL! La tabla usuarios de la base de datos dbs12303808 de Pepe es la más mejor." . PHP_EOL;
-        echo "Información del host: " . mysqli_get_host_info($enlace) . PHP_EOL;
+    try {
+    $conn = new PDO("mysql:host=$servername;dbname=$bd", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    if ($showMessages) {
+        echo "Conectado con éxito a $servername con usuario $username y contraseña $password <br><br>" ;
+
     }
-    mysqli_close($enlace);
+    
+    } catch(PDOException $e) {
+
+        if ($showMessages) {
+            echo "Error de conexion quillo " . $e->getMessage();
+        }
+    exit();
+    }
+
+    
+
+    ob_end_flush();
 ?>
