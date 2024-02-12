@@ -9,8 +9,9 @@
         $alta = htmlspecialchars($_POST['alta']);
         $revision = htmlspecialchars($_POST['revision']);
         $resolucion = htmlspecialchars($_POST['resolucion']);
+        $user = $_SESSION['usuario'];
       
-        $query= "INSERT INTO incidencias(planta, aula, descripcion, alta, revision, resolucion, comentario) VALUES('{$planta}','{$aula}','{$descripcion}','{$alta}','{$revision}','{$resolucion}','{$comentario}')";
+        $query= "INSERT INTO incidencias(user, planta, aula, descripcion, alta, revision, resolucion, comentario) VALUES('{$user}','{$planta}','{$aula}','{$descripcion}','{$alta}','{$revision}','{$resolucion}','{$comentario}')";
         $resultado = $conn->query($query);
     
           if (!$resultado) {

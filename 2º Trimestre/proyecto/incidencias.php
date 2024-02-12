@@ -5,15 +5,38 @@
 <!-- Navbar -->
 
 <!-- Navbar -->
-<?php
-            $querytot="SELECT count(id) FROM incidencias"; 
-            $vistatot= $conn->query($querytot);
- 
-            $queryres="SELECT count(id) FROM incidencias WHERE resolucion!='0000-00-00'"; 
-            $vistares= $conn->query($queryres);
- 
-            $querypen="SELECT count(id) FROM incidencias WHERE resolucion='0000-00-00'"; 
-            $vistapen= $conn->query($querypen);
+
+<!-- CONTADORES -->
+
+<?php 
+
+              $user = $_SESSION['usuario'];
+
+              if($_SESSION['admin']!="Administrador"){
+              
+                $querytot="SELECT count(id) FROM incidencias WHERE user='$user'"; 
+                $vistatot= $conn->query($querytot);
+     
+                $queryres="SELECT count(id) FROM incidencias WHERE resolucion!='0000-00-00' AND user='$user'"; 
+                $vistares= $conn->query($queryres);
+     
+                $querypen="SELECT count(id) FROM incidencias WHERE resolucion='0000-00-00' AND user='$user'"; 
+                $vistapen= $conn->query($querypen);
+              
+              }else{
+              
+                $querytot="SELECT count(id) FROM incidencias"; 
+                $vistatot= $conn->query($querytot);
+     
+                $queryres="SELECT count(id) FROM incidencias WHERE resolucion!='0000-00-00'"; 
+                $vistares= $conn->query($queryres);
+     
+                $querypen="SELECT count(id) FROM incidencias WHERE resolucion='0000-00-00'"; 
+                $vistapen= $conn->query($querypen);
+
+              }
+
+
  
           ?>
 
@@ -47,7 +70,14 @@
  
               
           <?php //SELECT DE TODO
-            $query="SELECT * FROM incidencias";               
+            $user = $_SESSION['usuario'];
+
+            if($_SESSION['admin']!="Administrador"){
+              $query="SELECT * FROM incidencias WHERE user='$user'";
+            }else{
+              $query="SELECT * FROM incidencias ";
+            }
+      
             $vista_incidencias= $conn->query($query);
 
             while($row = $vista_incidencias->fetch()){
