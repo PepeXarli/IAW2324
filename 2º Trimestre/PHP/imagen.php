@@ -74,7 +74,8 @@ input[type=text]{  width:40%;
           if($insertar){
               echo "Archivo Subido Correctamente.<br>";
 
-        echo "<img src='vista.php?id=".$ultimo."' alt='Img blob desde MySQL' width='600' />"; 
+              // Mostrar la imagen
+              header('Location: vista.php?id='.$ultimo);
           }else{
               echo "Ha fallado la subida, reintente nuevamente.";
           } 
