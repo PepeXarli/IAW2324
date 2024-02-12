@@ -97,7 +97,7 @@
                     session_start();
                     sleep(1);
                     $_SESSION['usuario']=$usuario;
-                    header('Location: login.php');
+                    header('Location: index.php');
 
                 } else {
                     echo "<script> document.getElementById('mensaje').innerHTML='Usuario ya existente'
