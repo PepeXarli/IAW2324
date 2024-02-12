@@ -76,7 +76,7 @@ include 'conexion.php';
       <!-- Left links -->
 
       <div class="d-flex align-items-center" id="dchanav">
-      <a class="btn btn-link px-3 me-2" href="login.php" style="color: white;">Cerrar sesión</a>
+      <a class="btn btn-link px-3 me-2" href="index.php" style="color: white;">Cerrar sesión</a>
 
         
         <img src="https://cdn-icons-png.flaticon.com/512/260/260507.png" id='persona' alt="" >
