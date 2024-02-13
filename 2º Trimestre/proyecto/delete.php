@@ -1,7 +1,7 @@
 <?php include "header.php" ?>
 <?php 
-     if(isset($_GET['eliminar']))
-     {
+    if(isset($_GET['eliminar']))
+    {
         $id= htmlspecialchars($_GET['eliminar']);
 
         $user = $_SESSION['usuario'];
@@ -18,6 +18,6 @@
         $delete_query= $conn->query($query);
         // header("Location: home.php");
         echo "<script>window.location='incidencias.php';</script>";
-     }
+    }
 ?>
 <?php include "footer.php" ?>
