@@ -6,9 +6,22 @@
     {
       $incidenciaid = htmlspecialchars($_GET['incidencias_id']); 
     }
-      
+
+    $user = $_SESSION['usuario'];
+
+    if($_SESSION['admin']!="Administrador"){
+
+      $query = "SELECT * FROM incidencias WHERE id = $incidenciaid AND user='$user'";
+        
+    }else{
+
       $query="SELECT * FROM incidencias WHERE id = $incidenciaid ";
+
+    }
+
+ 
       $vista_incidencias= $conn->query($query);
+
 
       while($row = $vista_incidencias->fetch())
         {
@@ -20,6 +33,13 @@
           $revision = $row['revision'];        
           $resolucion = $row['resolucion'];        
           $comentario = $row['comentario'];
+        }
+
+        if ($id==''){
+          echo "<script type='text/javascript'>
+          alert('¡Esta incidencia no es tuya ratilla!');
+          window.location='incidencias.php';
+          </script>";
         }
  
     if(isset($_POST['editar'])) 
