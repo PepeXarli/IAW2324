@@ -36,7 +36,7 @@
             <input type="password" name='contrasena2' placeholder='Ej.:sUp3rM4N0lit0'><br>
             <label for="planta" class="form-label" class='preg'>Rol</label>
             <select name="admin" id="planta" class="form-control preg" required>
-                <option value="Dirección">Dirección</option>
+                <option value="Direccion">Dirección</option>
                 <option value="Profesor">Profesor</option>
                 <option value="Administrador">Administrador</option>
             </select>
