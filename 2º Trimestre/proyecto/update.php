@@ -2,6 +2,15 @@
 <?php include "header.php"?>
 
 <?php
+
+  session_start();
+  session_set_cookie_params(120);
+
+  if($_SESSION['admin']=="Profesor"){
+      echo "<script> alert ('No tienes suficientes permisos para acceder a esta página') 
+      window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+  } else {
+
    if(isset($_GET['incidencias_id']))
     {
       $incidenciaid = htmlspecialchars($_GET['incidencias_id']); 
@@ -57,7 +66,8 @@
         echo "Se ha producido un error al actualizar la incidencia.";
       else
         echo "<script type='text/javascript'>alert('¡Datos de la incidencia actualizados!')</script>";
-    }             
+    }
+  }             
 ?>
 
 <h1 class="text-center">Actualizar incidencia</h1>
