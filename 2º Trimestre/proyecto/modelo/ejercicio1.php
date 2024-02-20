@@ -6,7 +6,7 @@
     echo $query;
     $resultado = $conn->query($query);
     
-    if ($conn->query($query) == false) {
+    if (!$resultado) {
         echo "Algo ha ido mal añadiendo la incidencia: ";
     }
     else
