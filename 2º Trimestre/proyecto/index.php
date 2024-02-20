@@ -70,6 +70,7 @@
                     $_SESSION['email']=$email;
                     $_SESSION['fecha']=$fecha;
 
+                    date_default_timezone_set('Europe/Madrid');
                     $sesion=date("d-m-Y h:i:sa");
                     $actusesion = "UPDATE usuproyecto set fecha = '$sesion' WHERE usuario ='$usuario' ";
                     $result = $conn->query($actusesion);
