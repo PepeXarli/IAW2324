@@ -30,7 +30,7 @@
         <label for="planta" class="form-label">Planta</label>
         <select name="planta" id="planta" class="form-control" required>
           <option value="Baja">Baja</option>
-          <option value="primera">Primera</option>
+          <option value="Primera">Primera</option>
           <option value="Segunda">Segunda</option>
         </select>
       </div>
