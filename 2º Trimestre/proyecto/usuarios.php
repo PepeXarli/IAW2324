@@ -14,6 +14,18 @@
 
 ?>
 
+<script>
+
+  function confirmar(usuario){
+        var confirmacion = confirm('¿Estás seguro de que deseas eliminar este usuario? Esto también eliminará todas sus incidencias.');
+
+    if (confirmacion) {
+        // Si el usuario aecpta, redirige a la página de eliminar
+        window.location='deleteuser.php?eliminar=' + usuario;
+    }
+  }
+
+</script>
 
 <!-- Navbar -->
 
@@ -51,7 +63,7 @@
               echo " <th scope='row' class='text-center'>{$usuario}</th>";
               echo " <td class='text-center'> {$rol}</td>";
               echo " <td class='text-center' > <a href='edituser.php?editar&usuario={$usuario}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
-              echo " <td class='text-center'>  <a href='deleteuser.php?eliminar={$usuario}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
+              echo " <td class='text-center'>  <a onclick='confirmar(`$usuario`)' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
               echo " </tr> ";
             }  
 
