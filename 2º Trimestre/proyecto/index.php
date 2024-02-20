@@ -55,6 +55,7 @@
                 while($row=$result->fetch()){
                     $admin=$row['admin'];
                     $email=$row['email'];
+                    $fecha=$row['fecha'];
                 }
 
                 
@@ -67,6 +68,12 @@
                     $_SESSION['usuario']=$usuario;
                     $_SESSION['admin']=$admin;
                     $_SESSION['email']=$email;
+                    $_SESSION['fecha']=$fecha;
+
+                    $sesion=date("d-m-Y h:i:sa");
+                    $actusesion = "UPDATE usuproyecto set fecha = '$sesion' WHERE usuario ='$usuario' ";
+                    $result = $conn->query($actusesion);
+
                     header("Refresh:1; url=incidencias.php");
         
                 } else {
