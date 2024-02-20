@@ -54,7 +54,7 @@
                 $result = $conn->query($comprobar);
                 while($row=$result->fetch()){
                     $admin=$row['admin'];
-                    
+                    $email=$row['email'];
                 }
 
                 
@@ -66,6 +66,7 @@
                     session_start();
                     $_SESSION['usuario']=$usuario;
                     $_SESSION['admin']=$admin;
+                    $_SESSION['email']=$email;
                     header("Refresh:1; url=incidencias.php");
         
                 } else {
