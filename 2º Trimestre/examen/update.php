@@ -8,7 +8,7 @@
 
   if($_SESSION['admin']=="Profesor"){
       echo "<script> alert ('No tienes suficientes permisos para acceder a esta página') 
-      window.location='http://pepe.thsite.top/proyecto/incidencias.php'</script>";
+      window.location='http://pepe.thsite.top/examen/incidencias.php'</script>";
   } else {
 
    if(isset($_GET['incidencias_id']))
