@@ -67,10 +67,7 @@ include 'conexion.php';
           <a class="nav-link largo" href="create.php" style="color: white;" >Crear incidencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link largo" href="creausu.php" style="color: white;" id='creausus'>Crear usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link corto" href="usuarios.php" style="color: white;" id='usuarios'>Usuarios</a>
+          <a class="nav-link largo" href="usuarios.php" style="color: white;" id='usuarios'>Panel de administración de usuarios</a>
         </li>
       </ul>
       <!-- Left links -->

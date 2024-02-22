@@ -10,6 +10,8 @@
 
 <?php 
 
+
+
               $user = $_SESSION['usuario'];
 
               if($_SESSION['admin']!="Administrador"){
@@ -56,9 +58,9 @@
               <th  scope="col">Planta</th>
               <th  scope="col">Aula</th>
               <th  scope="col">Descripción</th>
-              <th  scope="col">Fecha alta</th>
-              <th  scope="col">Fecha revisión</th>
-              <th  scope="col">Fecha solución</th>
+              <th  scope="col"><a href="<? echo $_SERVER['PHP_SELF'] ?>?ordenar=alta">Fecha alta</th>
+              <th  scope="col" >Fecha revisión</a></th>
+              <th  scope="col" ><a href="<? echo $_SERVER['PHP_SELF'] ?>?ordenar=resolucion" id='resolucion'>Fecha solución</th>
               <th  scope="col">Comentario</th>
               <th  scope="col" colspan="3" class="text-center">Operaciones</th>
             </tr>  
@@ -73,9 +75,22 @@
             $user = $_SESSION['usuario'];
 
             if($_SESSION['admin']!="Administrador"){
-              $query="SELECT * FROM incidencias WHERE user='$user'";
+
+              if ($_GET['ordenar']==''){
+                $query="SELECT * FROM incidencias WHERE user='$user'";
+              } else {
+                $query="SELECT * FROM incidencias WHERE user='$user' ORDER BY ".$_GET['ordenar'];
+
+              };
+
+              
             }else{
-              $query="SELECT * FROM incidencias ";
+              if ($_GET['ordenar']==''){
+                $query="SELECT * FROM incidencias ";
+              } else {
+                $query="SELECT * FROM incidencias ORDER BY ".$_GET['ordenar'] . " DESC";
+
+              };
             }
       
             $vista_incidencias= $conn->query($query);
@@ -109,8 +124,11 @@
               
               if($_SESSION['admin']=="Administrador" || $_SESSION['admin']=="Direccion"){
                 echo " <td class='text-center' > <a href='update.php?editar&incidencias_id={$id}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
-                echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
               };
+
+              if($_SESSION['admin']=="Administrador"){
+              echo " <td class='text-center'>  <a href='delete.php?eliminar={$id}' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
+              }
 
               echo " </tr> ";
             }  

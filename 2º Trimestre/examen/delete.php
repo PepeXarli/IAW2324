@@ -11,7 +11,7 @@
     session_start();
     session_set_cookie_params(120);
 
-    if($_SESSION['admin']=="Profesor"){
+    if($_SESSION['admin']=="Profesor" || $_SESSION['admin']=="Direccion"){
         echo "<script> alert ('No tienes suficientes permisos para acceder a esta página') 
         window.location='http://pepe.thsite.top/examen/incidencias.php'</script>";
     } else {

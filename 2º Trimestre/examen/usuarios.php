@@ -31,19 +31,21 @@
 
 <!-- Navbar -->
 
-  <div class="container">
+  <div class="container ">
     <h1 class="text-center" >Incidencias IES Antonio Machado</h1>
 
     <h3 class="text-center">Usuarios del sistema</h3>
     
-    <div class="conttabla">
+    <div class="conttabla text-center" >
+
+
+   <a href='creausu.php' class='btn btn-outline-dark mb-2' id='anadir'> <i class='bi bi-person-plus'></i> Añadir usuario</a>
 
     <table class="table table-striped table-bordered table-hover" id='tablausus'>
           <thead class="table-dark">
             <tr>
               <th  scope="col" class='text-center'>Nombre</th>
-              <th  scope="col" class='text-center'>Rol</th>
-              <th  scope="col" colspan="2" class="text-center">Operaciones</th>
+              <th  scope="col" class='text-center'>Número de incidencias</th>
             </tr>  
           </thead>
         <tbody>
@@ -53,6 +55,9 @@
  
               
         <?php //SELECT DE TODO
+
+            $user = $_SESSION['usuario'];
+
             $query="SELECT * FROM usuproyecto ORDER BY admin";               
             $vista_incidencias= $conn->query($query);
 
@@ -61,11 +66,25 @@
               $rol = $row['admin'];        
               echo "<tr >";
               echo " <th scope='row' class='text-center'>{$usuario}</th>";
-              echo " <td class='text-center'> {$rol}</td>";
-              echo " <td class='text-center' > <a href='edituser.php?editar&usuario={$usuario}' class='btn btn-secondary'><i class='bi bi-pencil'></i> Editar</a> </td>";
-              echo " <td class='text-center'>  <a onclick='confirmar(`$usuario`)' class='btn btn-danger'> <i class='bi bi-trash'></i> Eliminar</a> </td>";
-              echo " </tr> ";
+
+              $querytot="SELECT count(id) FROM incidencias WHERE user='$usuario'"; 
+              $vistatot= $conn->query($querytot);
+
+              while($row = $vistatot->fetch()){
+                $contador=$row['count(id)'];
+                echo " <td class='text-center'> {$contador}</td>";
+
+              }
+
+              echo " </tr>";
+
             }  
+
+        ?>
+
+
+        <?php
+            echo "<br>";
 
             include "footer.php";
 
@@ -74,6 +93,8 @@
             </tr>  
         </tbody>
         </table>
+
+        
 
     </div>
        

@@ -60,7 +60,7 @@ nav a{
 }
 
 .largo{
-    width: 133px;
+    width: 270px;
 }
 
 #contadores{
@@ -86,4 +86,8 @@ nav a{
 
 .invisible {
     display: none;
+}
+
+#resolucion {
+    text-decoration: none;
 }

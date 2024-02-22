@@ -56,6 +56,7 @@
                     $admin=$row['admin'];
                     $email=$row['email'];
                     $fecha=$row['fecha'];
+                    $ip=$row['ip'];
                 }
 
                 
@@ -69,11 +70,18 @@
                     $_SESSION['admin']=$admin;
                     $_SESSION['email']=$email;
                     $_SESSION['fecha']=$fecha;
+                    $_SESSION['ip']=$ip;
 
                     date_default_timezone_set('Europe/Madrid');
-                    $sesion=date("d-m-Y h:i:sa");
+                    setlocale(LC_TIME, 'es_VE.UTF-8','esp');
+
+                    $sesion= date("d")." de ".strftime("%B"). " de ".date("Y") . " a las ". date("H:i") ;
                     $actusesion = "UPDATE usuproyecto set fecha = '$sesion' WHERE usuario ='$usuario' ";
                     $result = $conn->query($actusesion);
+                    
+                    $ipactual=$_SERVER['REMOTE_ADDR'];
+                    $actuip = "UPDATE usuproyecto set ip = '$ipactual' WHERE usuario ='$usuario' ";
+                    $result = $conn->query($actuip);
 
                     header("Refresh:1; url=incidencias.php");
         
