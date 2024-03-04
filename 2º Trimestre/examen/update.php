@@ -42,6 +42,7 @@
           $revision = $row['revision'];        
           $resolucion = $row['resolucion'];        
           $comentario = $row['comentario'];
+          $email=$row['email'];
         }
 
         if ($id==''){
@@ -53,6 +54,7 @@
  
     if(isset($_POST['editar'])) 
     {
+      
       $planta = htmlspecialchars($_POST['planta']);
       $aula = htmlspecialchars($_POST['aula']);
       $descripcion = htmlspecialchars($_POST['descripcion']);
@@ -76,7 +78,7 @@
       <div class="form-group">
       <div class="form-group">
         <label for="email" >Email</label>
-        <input type="text" name="email" class="form-control" value="<?php echo $_SESSION['email']  ?>" disabled>
+        <input type="text" name="email" class="form-control" value="<?php echo $email;  ?>" disabled>
       </div>
         <label for="planta" >Planta</label>
         <select name="planta" id="planta" class="form-control" value="<?php echo $planta  ?>" required>
